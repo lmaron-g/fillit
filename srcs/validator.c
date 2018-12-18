@@ -10,14 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "fillit.h"
 
-int			valid_tetro(char *map)
+int		ft_sqrt(int nbr)
+{
+	int	i;
+
+	i = 1;
+	while (i * i < nbr)
+		i++;
+	return (i);
+}
+
+static int	valid_tetro(char *map)
 {
 	int		i;
 
@@ -45,7 +50,7 @@ int			valid_tetro(char *map)
 	return (0);
 }
 
-int			valid_map(char *map)
+static int	valid_map(char *map)
 {
 	int		i;
 	int		line_f;
@@ -89,5 +94,6 @@ int			valid_file(char *path)
 		if (!valid_map(buf))
 			return (0);
 	}
+	close(fd);
 	return (1);
 }
