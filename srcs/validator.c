@@ -81,6 +81,7 @@ static int	valid_map(char *map)
 int			valid_file(char *path)
 {
 	int		fd;
+	int		check;
 	int		bytes;
 	char	buf[22];
 
@@ -94,7 +95,10 @@ int			valid_file(char *path)
 		buf[bytes] = '\0';
 		if (!valid_map(buf))
 			return (0);
+		check = bytes;
 	}
+	if (check != 20)
+		print_error();
 	close(fd);
 	return (1);
 }
