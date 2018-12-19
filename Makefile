@@ -1,9 +1,11 @@
 NAME = fillit
 
 SRC_D = $(addprefix ./srcs/, $(SRCS))
+
 OBJ_D = objs
 
-GCCFLAGS = -Wall -Wall -Wextra -Werror
+GCCFLAGS = -Wall -Wextra -Werror -g
+
 SRCS = map.c   \
 	   main.c   \
 	   reader.c  \

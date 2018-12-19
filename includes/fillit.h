@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmaron-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/19 13:01:18 by lmaron-g          #+#    #+#             */
+/*   Updated: 2018/12/19 17:31:10 by lmaron-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 # define FILLIT_H
 
@@ -9,10 +21,8 @@
 # include <sys/stat.h>
 # include "libft.h"
 
-#include <stdio.h>
-
-int				n;
-int				rang;
+int				g_count_sh;
+int				g_rang;
 
 typedef struct	s_shape
 {
@@ -21,15 +31,15 @@ typedef struct	s_shape
 	int			height;
 	int			widht;
 	char		sign;
-}				shape;
+}				t_shape;
 
-void 			fill_it(shape shapes[]);
-int				reader(char *path, shape shapes[]);
+void			fill_it(t_shape shapes[]);
+int				reader(char *path, t_shape shapes[]);
 void			print_map(char **map, int rang);
-void			ft_error(void);
+void			print_error(void);
 int				valid_file(char *path);
 int				ft_sqrt(int nbr);
 void			free_map(char ***map);
-char			**ft_create_map(int size);
+char			**create_map(int size);
 
 #endif

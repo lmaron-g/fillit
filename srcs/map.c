@@ -1,44 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmaron-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/19 13:02:01 by lmaron-g          #+#    #+#             */
+/*   Updated: 2018/12/19 13:02:04 by lmaron-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-void	ft_error(void)
+void		print_error(void)
 {
 	ft_putendl("error");
 	exit(0);
 }
 
-char	**ft_create_map(int size)
+char		**create_map(int size)
 {
 	char	**res;
 	int		i;
 
 	if (!(res = (char **)malloc(sizeof(char *) * (size + 1))))
-		ft_error();
+		print_error();
 	i = 0;
 	while (i < size)
 	{
 		if (!(res[i] = ft_strnew(size)))
-			ft_error();
+			print_error();
 		ft_memset(res[i++], '.', size);
 	}
-	res[i] = NULL;
+	res[i] = 0;
 	return (res);
 }
 
-void	print_map(char **map, int rang)
+void		print_map(char **map, int g_rang)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while (i < rang)
+	while (i < g_rang)
 	{
-		write(1, map[i++], rang);
+		write(1, map[i++], g_rang);
 		write(1, "\n", 1);
 	}
 }
 
-void	free_map(char ***map)
+void		free_map(char ***map)
 {
-	int	i;
+	int		i;
 	char	**mapi;
 
 	i = 0;

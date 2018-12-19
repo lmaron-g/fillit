@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmaron-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/19 13:01:49 by lmaron-g          #+#    #+#             */
+/*   Updated: 2018/12/19 17:22:09 by lmaron-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 #include <stdio.h>
 
-int 		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	shape	shapes[26];
+	t_shape	shapes[26];
 
 	if (argc == 2)
 	{
@@ -13,7 +25,9 @@ int 		main(int argc, char **argv)
 			fill_it(shapes);
 			return (0);
 		}
+		else
+			print_error();
 	}
 	ft_putendl("usage: ./fillit input_file");
-	return (1);
+	return (0);
 }

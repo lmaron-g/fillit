@@ -6,15 +6,16 @@
 /*   By: lmaron-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 18:41:03 by lmaron-g          #+#    #+#             */
-/*   Updated: 2018/12/10 18:41:05 by lmaron-g         ###   ########.fr       */
+/*   Updated: 2018/12/19 17:30:54 by lmaron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
-int		ft_sqrt(int nbr)
+int			ft_sqrt(int nbr)
 {
-	int	i;
+	int		i;
 
 	i = 1;
 	while (i * i < nbr)
@@ -71,7 +72,7 @@ static int	valid_map(char *map)
 		if (map[i++] == '#')
 			hash++;
 	}
-	if (map[20] == '\n' && i == 21 && line_f == 4 && dot == 12 && hash == 4)
+	if (map[19] == '\n' && i == 21 && line_f == 4 && dot == 12 && hash == 4)
 		if (valid_tetro(map))
 			return (1);
 	return (0);
