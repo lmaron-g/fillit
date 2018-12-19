@@ -72,7 +72,7 @@ static int	valid_map(char *map)
 		if (map[i++] == '#')
 			hash++;
 	}
-	if (map[19] == '\n' && i == 21 && line_f == 4 && dot == 12 && hash == 4)
+	if ((map[20] == '\n' || map[20] == '\0') && line_f == 4 && dot == 12 && hash == 4)
 		if (valid_tetro(map))
 			return (1);
 	return (0);
@@ -91,7 +91,7 @@ int			valid_file(char *path)
 	{
 		if (bytes != 21 && bytes != 20)
 			return (0);
-		buf[21] = '\0';
+		buf[bytes] = '\0';
 		if (!valid_map(buf))
 			return (0);
 	}

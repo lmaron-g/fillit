@@ -88,7 +88,6 @@ static void			read_shape(char *map, t_shape shapes[])
 int					reader(char *path, t_shape shapes[])
 {
 	int				fd;
-	int				check;
 	int				bytes;
 	char			buf[22];
 
@@ -100,12 +99,9 @@ int					reader(char *path, t_shape shapes[])
 	{
 		if (bytes != 21 && bytes != 20)
 			print_error();
-		buf[21] = '\0';
+		buf[bytes] = '\0';
 		read_shape(buf, shapes);
-		check = bytes;
 	}
-	if (check != 20)
-		print_error();
 	close(fd);
 	return (1);
 }
