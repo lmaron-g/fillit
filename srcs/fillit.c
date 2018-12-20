@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-void		delete_it(t_shape shape, char **map, int i, int j)
+static void		delete_it(t_shape shape, char **map, int i, int j)
 {
 	int		coup;
 
@@ -21,7 +21,7 @@ void		delete_it(t_shape shape, char **map, int i, int j)
 		map[shape.y[coup] + i][shape.x[coup] + j] = '.';
 }
 
-int			place_it(t_shape shape, char **map, int i, int j)
+static int		place_it(t_shape shape, char **map, int i, int j)
 {
 	int coup;
 
@@ -37,7 +37,7 @@ int			place_it(t_shape shape, char **map, int i, int j)
 	return (1);
 }
 
-int			solve_it(char **map, t_shape shapes[], int stack)
+static int		solve_it(char **map, t_shape shapes[], int stack)
 {
 	int		i;
 	int		j;

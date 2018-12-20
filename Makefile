@@ -4,7 +4,7 @@ SRC_D = $(addprefix ./srcs/, $(SRCS))
 
 OBJ_D = objs
 
-GCCFLAGS = -Wall -Wextra -Werror -g
+GCCFLAGS = -Wall -Wextra -Werror
 
 SRCS = map.c   \
 	   main.c   \
