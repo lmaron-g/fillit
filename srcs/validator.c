@@ -46,7 +46,7 @@ static int	valid_tetro(char *map)
 		i++;
 	}
 	while (*map)
-		if (*map++ > 36)
+		if (*map == 37 || *map++ == 38)
 			return (1);
 	return (0);
 }
@@ -72,7 +72,8 @@ static int	valid_map(char *map)
 		if (map[i++] == '#')
 			hash++;
 	}
-	if ((map[20] == '\n' || map[20] == '\0') && line_f == 4 && dot == 12 && hash == 4)
+	if ((map[20] == '\n' || map[20] == '\0') && \
+							line_f == 4 && dot == 12 && hash == 4)
 		if (valid_tetro(map))
 			return (1);
 	return (0);
@@ -86,7 +87,7 @@ int			valid_file(char *path)
 	char	buf[22];
 
 	fd = open(path, O_RDONLY);
-	if (fd < 3 || read(fd, buf, 0) < 0)
+	if (fd == -1)
 		return (0);
 	while ((bytes = read(fd, buf, 21)))
 	{

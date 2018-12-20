@@ -93,7 +93,7 @@ int					reader(char *path, t_shape shapes[])
 
 	g_count_sh = 0;
 	fd = open(path, O_RDONLY);
-	if (fd < 3 || read(fd, buf, 0) < 0)
+	if (fd < 0 || read(fd, buf, 0) < 0)
 		return (0);
 	while ((bytes = read(fd, buf, 21)))
 	{

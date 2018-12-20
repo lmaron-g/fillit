@@ -69,9 +69,10 @@ void		fill_it(t_shape shapes[])
 
 	stack = 0;
 	g_rang = ft_sqrt(4 * g_count_sh);
-	map = create_map(16);
+	map = create_map(24);
 	while (!solve_it(map, shapes, stack))
-		g_rang++;
+		if (g_rang++ > 24)
+			break ;
 	print_map(map, g_rang);
 	free_map(&map);
 }
