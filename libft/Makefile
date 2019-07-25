@@ -82,14 +82,14 @@ OBJ = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-		gcc -c $(GCCFLAGS) $(SRCS) -I ./includes
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+		@gcc -c $(GCCFLAGS) $(SRCS) -I ./includes
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
 
 clean:
-		rm -f $(OBJ)
+		@rm -f $(OBJ)
 
 fclean: clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re: fclean all

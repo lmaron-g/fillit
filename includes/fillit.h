@@ -21,6 +21,8 @@
 # include <sys/stat.h>
 # include "libft.h"
 
+#define RESET	"\033[0m"
+
 int				g_count_sh;
 int				g_rang;
 
